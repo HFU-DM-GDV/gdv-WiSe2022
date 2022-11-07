@@ -17,6 +17,7 @@ dependencies    = [
   "opencv-python==4.6.0.66",
   "pathspec==0.10.1",
   "platformdirs==2.5.3",
+  "pycodestyle==2.9.1",
   "tomli==2.0.1"
 ]
 
