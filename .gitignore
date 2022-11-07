@@ -127,13 +127,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-Assignements.md
-img_tutorial01.jpg
-img_tutorial02.jpg
-img_out.jpg
-Assignement01_OpticalIllusion.html
-output/
-assignments/solutions/
-mask.jpg
-assignments/Assignment04_ObjectDetection.html
-video_result.mp4
+
