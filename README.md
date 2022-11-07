@@ -1,188 +1,129 @@
-# gdv-SoSe2022
-Exercises for course "Grafische Datenverarbeitung" in winter term 2022-2023 at HS Furtwangen University. Please note that all content here is tentative and will be adopted to the students' needs during the course.
+# GDV
+
+Exercises for course "Grafische Datenverarbeitung" in winter term 2022-2023 at HS Furtwangen University. Please note
+that all content here is tentative and will be adopted to the students' needs during the course.
 
 ## Prerequisites
-- Download and install Python 3 from [python.org](https://www.python.org/downloads/)
-  - Version 3.10.7 is recommended
-  - Test which version is installed on your machine with `python --version` in the terminal
-    - Ensure that the correct version is used in the terminal as well as the selected interpreter.
-- Install pip from https://pip.pypa.io/en/stable/installation/
-  - Ensure that a version newer than 19.3 is installed (pip --version)
 
-## Further Python ressources
-If you are not familiar with Python, check out the following tutorials:
-- https://www.python.org/about/gettingstarted/ 
-- https://docs.python.org/3/tutorial/
-- https://code.visualstudio.com/docs/python/python-tutorial
+First we need to download and install Python 3 from [python.org](https://www.python.org/downloads/). The recommended
+version is `3.10.7` or above. To inspect the currently installed version we can use the following terminal command:
 
-## VS Code
-The code is all developed using VS Code. You can use any IDE, but VS Code will be used in the lecture.
-- Install VS Code from https://code.visualstudio.com/
+```shell
+python --version
+```
 
-## VS Code extensions
-In order to get supported in coding it is helpful to install some extensions in VS Code.
-
-### Python
-Python extension for Visual Studio Code
-
-#### Pylance
-Fast, feature-rich language support for Python
-
-### Python Image Preview
-You can quickly check your Python image data during debugging.
-
-### Rather optional extensions
-
-#### Todo Tree
-Provides an overview about all code lines marked with "TODO".
-
-#### Python-autopep8
-This is a vscode-extension that applies autopep8 to your current file.
-
-## Installing OpenCV
-- Install opencv as pip module opencv-python as explained on https://pypi.org/project/opencv-python/ (Main modules should be enough for the beginning)
-
-| Windows         | MacOS     | Linux |
-|--------------|-----------|------------|
-|pip install opencv-python|python -m pip install opencv-python|python -m pip install opencv-python|
-
-⚠ Note that there is no need to install OpenCV from opencv.org
-
-⚠ Ensure that Python 3.10.x is used as mentioned above.
-
-See https://docs.opencv.org/master/d0/de3/tutorial_py_intro.html for further help on other systems.
-
-You can check the installed version with pip show opencv-python. It should be "Version: 4.6.0.66" or newer.
-
-## Start coding
-Now you are ready to start coding the tutorials that are described further below. The idea is to start with the "GDV_tutorial_XX_empty.py" files and try to fulfill the TODOs. That's how it is done during the course. The GDV_tutorial_XX.py files contain the solution.
+*Ensure that the correct version is used in the terminal as well as the selected interpreter.*
 
 ---
-## Helpful ressources
+
+Usually the dependency management tool `pip` is included in the Python installation. If it is not, download and install
+it from [pip.pypa.io](https://pip.pypa.io/en/stable/installation/). Version `19.3` or above is recommended. We can again
+use a terminal command to check the version:
+
+```shell
+pip --version
+```
+
+## Getting started with Python
+
+A great selection of useful resources are:
+
+- [https://www.python.org/about/gettingstarted/](https://www.python.org/about/gettingstarted/)
+- [https://docs.python.org/3/tutorial/](https://docs.python.org/3/tutorial/)
+- [https://code.visualstudio.com/docs/python/python-tutorial](https://code.visualstudio.com/docs/python/python-tutorial)
+
+## Setting up the development environment
+
+The source code is developed using VS Code. You can use any IDE, but VS Code will be used in the lecture. You can
+download VS Code from [https://code.visualstudio.com/][vsc-website]. On Linux you can follow the instructions on
+[this][vsc-linux] page. On Arch based systems you can use the OSS version `code` ([Link][vsc-arch-oss]) or the fully
+featured proprietary version `visual-studio-code-bin` ([Link][vsc-arch-bin]) from AUR.
+
+### VS Code extensions
+
+- Python `ms-python.python`: Python support in VS Code ([Link][vsc-ext-python])
+- Pylance `ms-python.vscode-pylance`: Python language server ([Link][vsc-ext-pylance])
+- Python Image Preview `076923.python-image-preview`: You can quickly check your Python image data during debugging
+  ([Link][vsc-ext-img-preview])
+- Todo Tree `Gruntfuggly.todo-tree`: Provides an overview about all code lines marked with "TODO"
+  ([Link][vsc-ext-todo-tree])
+
+### Python VENVs
+
+To more easily develop Python code it is recommended to setup a VENV (virtual environment). In the project root folder
+execute the following terminal command:
+
+```shell
+python -m venv .venv
+```
+
+The will create the hidden folder `.venv` in your current project folder. Next we need to enable the VENV. The VENV will
+only be active for the current terminal session. So closing the terminal and re-opening it, will disable the VENV.
+Always make sure to enable it before you start developing.
+
+```shell
+# For Windows use
+.venv\Scripts\Activate.ps1
+
+# For Linux
+source .venv/bin/activate
+```
+
+Special care is needed when using Windows. Please consult the following [guide][venv-guide] for more information.
+
+---
+
+On both Operation Systems the VENV can be deactivated with the following terminal command:
+
+```shell
+deactivate
+```
+
+### Installing dependencies
+
+Installing the required dependencies is straight forward:
+
+```shell
+pip install .
+```
+
+This will load the defined dependencies in `pyproject.toml` and install them inside the VENV.
+
+## Happy coding!
+
+Now you are ready to start coding the tutorials that are described further below. The idea is to start with the
+`GDV_tutorial_XX_empty.py` files and try to fulfill the TODOs. That's how it is done during the course. The
+`GDV_tutorial_XX.py` files contain the solution.
+
+## Helpful resources
 
 ### Python
-You can use https://docs.python.org/3/ as a starting point and the [Library Reference](https://docs.python.org/3/library/index.html) or the [Language Reference](https://docs.python.org/3/reference/index.html) should contain all the needed information.
+
+You can use https://docs.python.org/3/ as a starting point and the [Library Reference][py-lib-ref] or the
+[Language Reference][py-lang-ref] should contain all the needed information.
 
 ### OpenCV reference
-See https://docs.opencv.org/4.6.0/ for the OpenCV code reference. Here, all OpenCV methods are explained. If you want to know about parameters and flags, this is the page to look them up. 
+
+See [https://docs.opencv.org/4.6.0/](https://docs.opencv.org/4.6.0/) for the OpenCV code reference. Here, all OpenCV
+methods are explained. If you want to know about parameters and flags, this is the page to look them up.
 
 ### NumPy
-OpenCV uses NumPy ndarrays as the common format for data exchange. It can create, operate on, and work with NumPy arrays. For some operations it makes sense to import the NumPy module and use special functions provided by NumPy. Other libraries like TensorFlow and SciPy also use NumPy. See https://numpy.org/doc/stable/reference/index.html for the API reference.
 
-### Python style guide
-All these tutorials are written according to the [PEP8 Python Code Style Guide](https://www.python.org/dev/peps/pep-0008/). This is realized using the Python tools [pycodestyle (pep8)](https://code.visualstudio.com/docs/python/linting#_pycodestyle-pep8) and [autopep8](https://pypi.org/project/autopep8/).
+OpenCV uses NumPy `ndarrays` as the common format for data exchange. It can create, operate on, and work with NumPy
+arrays. For some operations it makes sense to import the NumPy module and use special functions provided by NumPy.
+Other libraries like TensorFlow and SciPy also use NumPy. See the official [docs][numpy-docs] for the API reference.
 
-### Other learning sources for OpenCV
-- [LearnOpenCV](https://learnopencv.com/) is a website that hosts some complete courses in Computer Vision and also some very good and [introductive tutorials](https://learnopencv.com/getting-started-with-opencv/).
+[venv-guide]: https://docs.python.org/3/library/venv.html
+[py-lib-ref]: https://docs.python.org/3/library/index.html
+[py-lang-ref]: https://docs.python.org/3/reference/index.html
+[numpy-docs]: https://numpy.org/doc/stable/reference/index.html
 
+[vsc-ext-python]: https://marketplace.visualstudio.com/items?itemName=ms-python.python
+[vsc-ext-pylance]: https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance
+[vsc-ext-img-preview]: https://marketplace.visualstudio.com/items?itemName=076923.python-image-preview
+[vsc-ext-todo-tree]: https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree
 
-### Other video tutorials
-- [Tech with Tim: OpenCV Python Tutorials](https://www.youtube.com/watch?v=qCR2Weh64h4&list=PLzMcBGfZo4-lUA8uGjeXhBUUzPYc6vZRn)
-- [freeCodeCamp.org -OpenCV Course - Full Tutorial with Python](https://www.youtube.com/watch?v=oXlwWbU8l2o) (not yet watched)
-
----
-## Tutorials
-
-### Tutorial #1
-Load, resize and rotate an image. And display it to the screen.
-- [empty code](./GDV_tutorial_01_empty.py)
-- [complete code](./GDV_tutorial_01.py)
-
-### Tutorial #2
-Direct pixel access and manipulation. Set some pixels to black, copy some part of the image to some other place, count the used colors in the image
-- [empty code](./GDV_tutorial_02_empty.py)
-- [complete code](./GDV_tutorial_02.py)
-
-### Tutorial #3
-Show camera video and mirror it.
-- [empty code](./GDV_tutorial_03_empty.py)
-- [complete code](./GDV_tutorial_03.py)
-
-### Tutorial #4
-Loading a video file and mirror it.
-- [empty code](./GDV_tutorial_04_empty.py)
-- [complete code](./GDV_tutorial_04.py)
-
-### Tutorial #5
-Use the webcam image stream and draw something on it. Animate one of the drawings.
-- [empty code](./GDV_tutorial_05_empty.py)
-- [complete code](./GDV_tutorial_05.py)
-Note that the solution uses the "map" function. Check [this tutorial](https://www.learnpython.org/en/Map%2C_Filter%2C_Reduce) if you are not familiar with map paradigm from functional programming.
-
-### Tutorial #6
-Playing around with colors. We convert some values from RGB to HSV and then find colored objects in the image and mask them out. Includes a color picker on double-click now. The RGB version is meant to demonstrate that this does not work in RGB color space.
-- [empty code](./GDV_tutorial_06_empty.py)
-- [bad code](./GDV_tutorial_06rgb.py)
-- [complete code](./GDV_tutorial_06.py)
-
-### Tutorial #7
-Counting colored objects by finding connected components in the binary image. Modify the binary image to improve the results.
-- [empty code](./GDV_tutorial_07_empty.py)
-- [complete code](./GDV_tutorial_07.py)
-
-### Tutorial #8
-Demonstrating how to do template matching in OpenCV. 
-- [empty code](./GDV_tutorial_08_empty.py)
-- [complete code](./GDV_tutorial_08.py)
-
-### Tutorial #9
-Demonstrating Gaussian blur filter with OpenCV. 
-- [empty code](./GDV_tutorial_09_empty.py)
-- [complete code](./GDV_tutorial_09.py)
-- [complete code with 3D plot of the kernel using matplotlib](./GDV_tutorial_09_3Dplot.py)
-  - Note that matplotlib and PyQT5 need to be installed as described [here](https://matplotlib.org/stable/users/installing.html)
-
-### Tutorial #10
-Doing the Fourier Transform for images and back.
-- [empty code](./GDV_tutorial_10_empty.py)
-- [complete code](./GDV_tutorial_10.py)
-
-### Tutorial #11
-Geometric transformations a.k.a. image warping.
-- [empty code](./GDV_tutorial_11_empty.py)
-- [complete code](./GDV_tutorial_11.py)
-
-### Tutorial #12
-Select three points in two images and compute the appropriate affine transformation.
-- [empty code](./GDV_tutorial_12_empty.py)
-- [complete code](./GDV_tutorial_12.py)
-
-### Tutorial #13
-Select four points in two images and compute the appropriate projective/perspective transformation.
-- [empty code](./GDV_tutorial_13_empty.py)
-- [complete code](./GDV_tutorial_13.py)
-
-### Tutorial #14
-Compute the edges of an image with the Canny edge detection. Adjust the parameters using sliders.
-- [empty code](./GDV_tutorial_14_empty.py)
-- [complete code](./GDV_tutorial_14.py)
-
-### Tutorial #15
-Compute the features of an image with the Harris corner detection. Adjust the parameters using sliders.
-- [empty code](./GDV_tutorial_15_empty.py)
-- [complete code](./GDV_tutorial_15.py)
-
-### Tutorial #16
-Compute the Harris corner response image and detect isolated corners with non-maximum suppression.
-- [empty code](./GDV_tutorial_16_empty.py)
-- [complete code](./GDV_tutorial_16.py)
-
-### Tutorial #17
-A demonstration of the OpenCV Simple Blob Detector. Adjust the parameters using sliders.
-- [empty code](./GDV_tutorial_17_empty.py)
-- [complete code](./GDV_tutorial_17.py)
-
-### Tutorial #18
-A demonstration of SIFT Detector and Descriptor for object recognition.
-- [empty code](./GDV_tutorial_18_empty.py)
-- [complete code](./GDV_tutorial_18.py)
-
-### Tutorial #19
-A demonstration of object detection using a pre-trained deep neural network. Heavily based on https://learnopencv.com/deep-learning-with-opencvs-dnn-module-a-definitive-guide/
-- [empty code](./GDV_tutorial_19_empty.py)
-- [complete code](./GDV_tutorial_19.py)
-
-### Tutorial #20
-Image classification with k-nearest neighbor approach using the CIFAR-10 data. Code is similar to the one used in assignment #4 and hence a bit cluttered.
-- [empty code](./GDV_tutorial_20_empty.py)
-- [complete code](./GDV_tutorial_20.py)
+[vsc-website]: https://code.visualstudio.com/
+[vsc-linux]: https://code.visualstudio.com/docs/setup/linux
+[vsc-arch-oss]: https://archlinux.org/packages/community/x86_64/code/
+[vsc-arch-bin]: https://aur.archlinux.org/packages/visual-studio-code-bin
