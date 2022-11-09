@@ -91,9 +91,9 @@ This will load the defined dependencies in `pyproject.toml` and install them ins
 
 ## Happy coding!
 
-Now you are ready to start coding the tutorials that are described further below. The idea is to start with the
-`GDV_tutorial_XX_empty.py` files and try to fulfill the TODOs. That's how it is done during the course. The
-`GDV_tutorial_XX.py` files contain the solution.
+Now you are ready to start coding the tutorials. The code can be found inside the `src` folder. The idea is to start
+with the `<XX>-<NAME>.problem.py` files and try to fulfill the TODOs. That's how it is done during the course. The
+`<XX>-<NAME>.solution.py` files contain the solution.
 
 ## Helpful resources
 
