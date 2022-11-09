@@ -39,7 +39,7 @@ window_height = 480
 # we use a main function this time: see https://realpython.com/python-main-function/ why it makes sense
 def main():
     # Load an image, compute frequency domain image from it and display both or vice versa
-    image_name = "images/chewing_gum_balls01.jpg"
+    image_name = "data/images/chewing_gum_balls01.jpg"
 
     # Load the image.
     image = cv2.imread(image_name, cv2.IMREAD_GRAYSCALE)

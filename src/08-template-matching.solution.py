@@ -12,8 +12,8 @@ use_color = True
 if use_color:
     # load image and template image, note that the template has been manually
     # cut out of the image
-    img = cv2.imread("images/chewing_gum_balls06.jpg", cv2.IMREAD_COLOR)
-    template = cv2.imread("images/cgb_green.jpg", cv2.IMREAD_COLOR)
+    img = cv2.imread("data/images/chewing_gum_balls06.jpg", cv2.IMREAD_COLOR)
+    template = cv2.imread("data/images/cgb_green.jpg", cv2.IMREAD_COLOR)
 
     # read shape of the template and original image
     h, w, c = template.shape
@@ -21,8 +21,8 @@ if use_color:
 else:
     # load image and template image, note that the template has been manually
     # cut out of the image
-    img = cv2.imread("images/chewing_gum_balls06.jpg", cv2.IMREAD_GRAYSCALE)
-    template = cv2.imread("images/cgb_green.jpg", cv2.IMREAD_GRAYSCALE)
+    img = cv2.imread("data/images/chewing_gum_balls06.jpg", cv2.IMREAD_GRAYSCALE)
+    template = cv2.imread("data/images/cgb_green.jpg", cv2.IMREAD_GRAYSCALE)
 
     # read shape of the template and original image
     h, w = template.shape

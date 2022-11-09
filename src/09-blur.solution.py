@@ -31,7 +31,7 @@ def show_kernel(kernel):
 
 
 # Load the image.
-image_name = "images/Bumbu_Rawon.jpg"
+image_name = "data/images/Bumbu_Rawon.jpg"
 image = cv2.imread(image_name, cv2.IMREAD_GRAYSCALE)
 # image = cv2.resize(image, (320,213))
 

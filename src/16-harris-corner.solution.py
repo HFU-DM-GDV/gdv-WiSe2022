@@ -30,7 +30,7 @@ def do_non_maxima_suppression(img, window_size):
 
 
 # load example image
-img = cv2.imread("images/chessboard-contrast-squares.jpg", cv2.IMREAD_COLOR)
+img = cv2.imread("data/images/chessboard-contrast-squares.jpg", cv2.IMREAD_COLOR)
 # resize if needed
 img = cv2.resize(img, None, fx=0.1, fy=0.1)
 
