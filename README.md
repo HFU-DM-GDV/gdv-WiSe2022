@@ -3,6 +3,11 @@
 Exercises for course "Grafische Datenverarbeitung" in winter term 2022-2023 at HS Furtwangen University. Please note
 that all content here is tentative and will be adopted to the students' needs during the course.
 
+## ⚠️ Notice
+
+The code structure of the tutorial code was updated in favor of tidiness. It is also now easier to distinguish the empty
+files (where you, the students, can work on) and the solution. For more information see [here](#happy-coding).
+
 ## Prerequisites
 
 First we need to download and install Python 3 from [python.org](https://www.python.org/downloads/). The recommended
@@ -92,8 +97,10 @@ This will load the defined dependencies in `pyproject.toml` and install them ins
 ## Happy coding!
 
 Now you are ready to start coding the tutorials. The code can be found inside the `src` folder. The idea is to start
-with the `<XX>-<NAME>.problem.py` files and try to fulfill the TODOs. That's how it is done during the course. The
-`<XX>-<NAME>.solution.py` files contain the solution.
+with the `<XX>-<NAME>.problem.py` files and try to fulfill the TODOs. These "problem" files will guide you in the right
+direction. If there are any questions, you can ask for help during the lecture. The `<XX>-<NAME>.solution.py` files
+contain the solution. After you implemented your own sultion, use this file to compare and maybe add some improvements
+to your won code.
 
 ## Helpful resources
 
