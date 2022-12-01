@@ -11,7 +11,7 @@ import numpy as np
 
 """ Initialize images """
 # load object image as color image
-img_object = cv2.imread("images\\sift_object01.jpg", cv2.IMREAD_COLOR)
+img_object = cv2.imread("data\\images\\sift_object01.jpg", cv2.IMREAD_COLOR)
 # extract shape of the image
 rows_obj, cols_obj, dims_obj = img_object.shape
 # create a greyscale image for the corner detection

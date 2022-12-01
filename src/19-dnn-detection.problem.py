@@ -4,14 +4,12 @@
 # A demonstration of object detection using a pre-trained deep neural network. Heavily based on
 # https://learnopencv.com/deep-learning-with-opencvs-dnn-module-a-definitive-guide/
 #
-# Dealing with deep learning models, based on
-# https://learnopencv.com/deep-learning-with-opencvs-dnn-module-a-definitive-guide/
 
 import cv2
 import time
 import numpy as np
 
-# load the COCO class names
+# load the COCO class names (TODO: files not available, download needed)
 with open("models/object_detection_classes_coco.txt", "r", encoding="utf-8") as f:
     class_names = f.read().split("\n")
 # DEBUG: print(class_names)
@@ -23,7 +21,7 @@ colors = np.random.uniform(0, 255, size=(len(class_names), 3))
 net = cv2.dnn.readNet("your code here")
 
 
-# capture the video
+# capture the video  (TODO: file not available, download needed)
 cap = cv2.VideoCapture("./videos/objects_UH.MOV")
 # cap = cv2.VideoCapture(0) # uncomment to use the webcam
 # get the video frames' width and height for proper saving of videos
