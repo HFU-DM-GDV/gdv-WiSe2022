@@ -12,11 +12,11 @@ img = cv2.resize(img, (400, 400), interpolation=cv2.INTER_CUBIC)
 rows, cols, dims = img.shape
 
 # TODO define translation matrix for translation about 100 pixels to the right and 50 up
-T_translation = "tbd"
+T_translation = 'tbd'
 # a pretty print for the matrix:
 print("\nTranslation\n", "\n".join(["\t".join(["%03.3f" % cell for cell in row]) for row in T_translation]))
 # TODO apply translation matrix on image using cv2.warpAffine
-dst_translation = "tbd"
+dst_translation = 'tbd'
 
 # TODO define anisotropic scaling matrix that stretches to double length horizontally
 # and squeezes vertically to the half height
