@@ -24,19 +24,19 @@ print(result, end="\n\n")
 
 
 # load image
-img = cv2.imread('images\hay-harvest-texture-golden-farm-505426.jpg', cv2.IMREAD_GRAYSCALE)
+img = cv2.imread('data/images/Bumbu_Rawon.jpg', cv2.IMREAD_GRAYSCALE)
 
-img_crop = img[3:8,3:8]
-img5x5 = cv2.resize(img,(5,5))
-eye5x5 = np.identity(5,np.uint8)
+img_crop = img[3:8, 3:8]
+img5x5 = cv2.resize(img, (5, 5))
+eye5x5 = np.identity(5, np.uint8)
 
 print(img5x5, img_crop, eye5x5)
 
-print(img_crop * eye5x5) # element-wise
-print(img_crop @ eye5x5) # matrix multiplication
+print(img_crop * eye5x5)  # element-wise
+print(img_crop @ eye5x5)  # matrix multiplication
 
-col = cv2.getGaussianKernel(5,1.0)
-col = np.zeros((5,1), np.uint8)
+col = cv2.getGaussianKernel(5, 1.0)
+col = np.zeros((5, 1), np.uint8)
 col[0] = 1
 col[1] = 2
 col[2] = 3
@@ -50,5 +50,3 @@ print('\n col * row', col * row)
 print('\n row * col', row * col)
 print('col @ row', col @ row)
 print('row @ col', row @ col)
-
-
