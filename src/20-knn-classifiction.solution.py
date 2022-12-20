@@ -114,7 +114,7 @@ def main():
     # check if training data is loaded correctly
     trainData.testCifar(375)
     # test a bunch of images and define an appropriate number of neighbours (k)
-    run_test_on_folder(trainData, "./data/test_cifar/", k=10)
+    run_test_on_folder(trainData, "./data/cifar/", k=10)
 
 
 if __name__ == "__main__":
