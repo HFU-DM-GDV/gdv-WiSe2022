@@ -43,7 +43,7 @@ def click_dst(event, x, y, flags, param):
 
 
 # Load image and resize for better display
-img = cv2.imread("data\\images\\nl_clown.jpg", cv2.IMREAD_COLOR)
+img = cv2.imread("data/images/nl_clown.jpg", cv2.IMREAD_COLOR)
 img = cv2.resize(img, (400, 400), interpolation=cv2.INTER_CUBIC)
 
 # initialize needed variables and windows

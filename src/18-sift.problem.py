@@ -2,14 +2,15 @@
 # ------------
 #
 # A demonstration of SIFT Detector and Descriptor for object recognition. Inspired by
-# https://docs.opencv.org/4.x/dc/dc3/tutorial_py_matcher.html
+# https://docs.opencv.org/4.x/dc/dc3/tutorial_py_matcher.html and
+# https://docs.opencv.org/4.x/da/df5/tutorial_py_sift_intro.html
 
 import cv2
 import numpy as np
 
 ''' Initialize images '''
 # load object image as color image
-img_object = cv2.imread('data\\images\\sift_object01.jpg', cv2.IMREAD_COLOR)
+img_object = cv2.imread('./data/images/sift_object01.jpg', cv2.IMREAD_COLOR)
 # extract shape of the image
 rows_obj, cols_obj, dims_obj = img_object.shape
 # create a greyscale image for the corner detection
@@ -21,7 +22,7 @@ cv2.resizeWindow(window_object, cols_obj, rows_obj)
 cv2.imshow(window_object, img_object)
 
 # load table image as color image
-img_table = cv2.imread('images\\sift_table01.jpg', cv2.IMREAD_COLOR)
+img_table = cv2.imread('./data/images/sift_table01.jpg', cv2.IMREAD_COLOR)
 # extract shape of the image
 rows_table, cols_table, dims_table = img_object.shape
 # create a greyscale image for the corner detection
@@ -36,7 +37,7 @@ print('Loading images done.')
 cv2.waitKey(0)
 
 ''' do the feature detection with SIFT '''
-# TODO Create a SIFT detector for 500 features (see https://docs.opencv.org/4.5.3/d7/d60/classcv_1_1SIFT.html#ad337517bfdc068ae0ba0924ff1661131)
+# TODO Create a SIFT detector for 500 features (see https://docs.opencv.org/4.6.0/d7/d60/classcv_1_1SIFT.html)
 
 
 # Detect features and compute descriptors in both images
@@ -44,7 +45,7 @@ keypoints_obj, descriptors_obj = 'tbd'
 keypoints_table, descriptors_table = 'tbd'
 
 # TODO Draw detected feature points in both images and show them
-# see (https://docs.opencv.org/4.5.3/d4/d5d/group__features2d__draw.html#ga5d2bafe8c1c45289bc3403a40fb88920)
+# see (https://docs.opencv.org/4.6.0/d4/d5d/group__features2d__draw.html)
 
 
 cv2.imshow(window_object, img_object)
@@ -53,7 +54,7 @@ print('Feature detection done.')
 cv2.waitKey(0)
 
 ''' do the feature matching with a brute force matcher '''
-# TODO Initialize and run BFMatcher with default params (see https://docs.opencv.org/4.5.3/d3/da1/classcv_1_1BFMatcher.html#abe0bb11749b30d97f60d6ade665617bd)
+# TODO Initialize and run BFMatcher with default params (see https://docs.opencv.org/4.6.0/d3/da1/classcv_1_1BFMatcher.html)
 
 
 # store all the good matches as per Lowe's ratio test.
@@ -81,7 +82,7 @@ if len(good) > MIN_MATCH_COUNT:
         [keypoints_obj[m[0].queryIdx].pt for m in good]).reshape(-1, 1, 2)
     dst_pts = np.float32(
         [keypoints_table[m[0].trainIdx].pt for m in good]).reshape(-1, 1, 2)
-    # TODO find the homography with RANSAC (see https://docs.opencv.org/4.5.3/d9/d0c/group__calib3d.html#ga4abc2ece9fab9398f2e560d53c8c9780)
+    # TODO find the homography with RANSAC (see https://docs.opencv.org/4.6.0/d9/d0c/group__calib3d.html#ga4abc2ece9fab9398f2e560d53c8c9780)
 
     print('\nTransformation matrix\n', '\n'.join(['\t'.join(
         ['%03.3f' % cell for cell in row]) for row in M]))

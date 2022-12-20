@@ -28,7 +28,7 @@ def on_change(val):
 
 
 # load example image as grayscale
-img = cv2.imread("data\\images\\nl_clown.jpg", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("data/images/nl_clown.jpg", cv2.IMREAD_GRAYSCALE)
 # resize if needed
 img = cv2.resize(img, (400, 400))
 # clone if needed

@@ -44,7 +44,7 @@ def on_change(val):
 
 
 # load example image as color image
-img = cv2.imread("data\\images\\logo.png", cv2.IMREAD_COLOR)
+img = cv2.imread("data/images/logo.png", cv2.IMREAD_COLOR)
 img = cv2.resize(img, (400, 400))
 # clone image
 img_clone = np.copy(img)
