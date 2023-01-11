@@ -4,9 +4,9 @@
 # Image classification with k-nearest neighbor approach using the CIFAR-10 data. Code is similar to the one used in
 # assignment #4 and hence a bit cluttered.
 
-# TODO Image classification with kNN on CIFAR-10 data set. Go to https://www.cs.toronto.edu/~kriz/cifar.html and download the
-# data CIFAR-10 python version: https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz and then extract into data
-# folder.
+# TODO Image classification with kNN on CIFAR-10 data set. Go to https://www.cs.toronto.edu/~kriz/cifar.html and
+# download the data CIFAR-10 python version: https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz and then
+# extract into data folder.
 
 import numpy as np
 import cv2

@@ -44,7 +44,7 @@ class Descriptor(Enum):
 
     def getSize(self):
         if self is Descriptor.COLOR32:
-            # TODO Implement this helper method that returns the size/length of the descriptor 
+            # TODO Implement this helper method that returns the size/length of the descriptor
             return -1
 
 
@@ -82,7 +82,7 @@ class TrainingSet:
     def testCifar(self, index):
         """Test visually if the data is loaded correctly"""
         # TODO take the image data from the data set at index, reshape it and visualize it
-        # Note that it is sufficient to take only one color channel 
+        # Note that it is sufficient to take only one color channel
         test_img = -1
         cv2.imshow(window_title, test_img)
         cv2.waitKey(0)
@@ -90,7 +90,8 @@ class TrainingSet:
 
 def classify_knn(trainData, sample, k):
     """Returns the dominating category in the k nearest neighbors"""
-    # TODO implement knn classifier as explained here: https://docs.opencv.org/4.5.5/d5/d26/tutorial_py_knn_understanding.html
+    # TODO implement knn classifier as explained here:
+    # https://docs.opencv.org/4.5.5/d5/d26/tutorial_py_knn_understanding.html
 
 
 def run_test_on_folder(trainData, folder_name, k):
