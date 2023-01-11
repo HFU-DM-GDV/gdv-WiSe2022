@@ -26,6 +26,8 @@ class Descriptor(Enum):
 
     def compute(self, img):
         if self is Descriptor.COLOR32:
+            # the descriptor vector is simply the resized image (32x32) in row-major order with
+            # each color channel one after one
             return np.ravel(cv2.resize(cv2.rotate(img, cv2.ROTATE_90_COUNTERCLOCKWISE), (32, 32)), "F")
 
     """ Visually test the computation of the descriptor vector """
@@ -97,8 +99,11 @@ def run_test_on_folder(trainData, folder_name, k):
         descr = trainData.descriptor
         # load image
         img = cv2.imread(file, cv2.IMREAD_COLOR)
+        # test if the compute method for the descriptor works as expected, a window should pop up that shows the image
         descr.testCompute(img)
+        # compute the descriptor vector
         newcomer = np.ndarray(shape=(1, descr.getSize()), buffer=np.float32(descr.compute(img)), dtype=np.float32)
+        # classify the image
         category = classify_knn(trainData, newcomer, k)
         print("Classified as %s" % category.decode())
         num_test_images += 1
@@ -109,12 +114,12 @@ def main():
     # Initialize the training set and load CIFAR-10 data
     trainData = TrainingSet()
     trainData.loadCifar10("./data/cifar-10-batches-py/data_batch_1", "./data/cifar-10-batches-py/batches.meta")
-    # create an image for visual debugging
+    # open a window for visual debugging
     cv2.namedWindow(window_title, cv2.WINDOW_GUI_NORMAL)
     # check if training data is loaded correctly
     trainData.testCifar(375)
     # test a bunch of images and define an appropriate number of neighbours (k)
-    run_test_on_folder(trainData, "./data/test_cifar/", k=10)
+    run_test_on_folder(trainData, "./data/cifar/", k=10)
 
 
 if __name__ == "__main__":

@@ -4,9 +4,9 @@
 # Image classification with k-nearest neighbor approach using the CIFAR-10 data. Code is similar to the one used in
 # assignment #4 and hence a bit cluttered.
 
-# TODO Image classification with kNN on CIFAR-10 data set. Go to https://www.cs.toronto.edu/~kriz/cifar.html and download the
-# data CIFAR-10 python version: https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz and then extract into data
-# folder.
+# TODO Image classification with kNN on CIFAR-10 data set. Go to https://www.cs.toronto.edu/~kriz/cifar.html and
+# download the data CIFAR-10 python version: https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz and then
+# extract into data folder.
 
 import numpy as np
 import cv2
@@ -26,7 +26,9 @@ class Descriptor(Enum):
 
     def compute(self, img):
         if self is Descriptor.COLOR32:
-            # TODO
+            # TODO implement the computation of the descriptor vector by using np.ravel and cv2.resize
+            # The descriptor vector should simply be the resized image (32x32) in row-major order with
+            # each color channel one after one
             return -1
 
     """ Visually test the computation of the descriptor vector """
@@ -42,7 +44,7 @@ class Descriptor(Enum):
 
     def getSize(self):
         if self is Descriptor.COLOR32:
-            # TODO
+            # TODO Implement this helper method that returns the size/length of the descriptor 
             return -1
 
 
@@ -62,6 +64,7 @@ class TrainingSet:
         self.descriptor = Descriptor.COLOR32
         tempData = dict[b"data"]
         tempResponses = np.array(dict[b"labels"])
+        # TODO implement the getSize method of the Descriptor class
         self.trainData = np.ndarray(
             shape=(self.num_training_images, self.descriptor.getSize()),
             buffer=np.float32(np.array(np.ravel(tempData))),
@@ -78,7 +81,8 @@ class TrainingSet:
 
     def testCifar(self, index):
         """Test visually if the data is loaded correctly"""
-        # TODO
+        # TODO take the image data from the data set at index, reshape it and visualize it
+        # Note that it is sufficient to take only one color channel 
         test_img = -1
         cv2.imshow(window_title, test_img)
         cv2.waitKey(0)
@@ -97,8 +101,11 @@ def run_test_on_folder(trainData, folder_name, k):
         descr = trainData.descriptor
         # load image
         img = cv2.imread(file, cv2.IMREAD_COLOR)
+        # test if the compute method for the descriptor works as expected, a window should pop up that shows the image
         descr.testCompute(img)
+        # compute the descriptor vector
         newcomer = np.ndarray(shape=(1, descr.getSize()), buffer=np.float32(descr.compute(img)), dtype=np.float32)
+        # classify the image
         category = classify_knn(trainData, newcomer, k)
         print("Classified as %s" % category.decode())
         num_test_images += 1
@@ -115,7 +122,7 @@ def main():
     trainData.testCifar(375)
     # test a bunch of images
     # TODO define an appropriate number of neighbours (k)
-    run_test_on_folder(trainData, "./data/test_cifar/", k=-1)
+    run_test_on_folder(trainData, "./data/cifar/", k=-1)
 
 
 if __name__ == "__main__":
