@@ -70,7 +70,7 @@ Always make sure to enable it before you start developing.
 # For Windows use
 .venv\Scripts\Activate.ps1
 
-# For Linux
+# For Linux and Mac OS
 source .venv/bin/activate
 ```
 

@@ -128,6 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# Cifar 10 data that needs to be downloaded manually
 data/cifar-10-batches-py/batches.meta
 data/cifar-10-batches-py/data_batch_1
 data/cifar-10-batches-py/data_batch_2
